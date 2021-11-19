@@ -1,0 +1,60 @@
+#' grassmapr: A package to map C3/C4 grass distribution and model terrestrial
+#'   d13C isoscape
+#'
+#' \pkg{grassmapr} provides functions (1) to predict C3 and C4 grass cover based
+#'   on climate constraints; and (2) to generate stable carbon (d13C) isoscapes
+#'   for terrestrial vegetation.
+#'
+#' @docType package
+#'
+#' @name grassmapr
+#'
+#' @author Rebecca L. Powell, Daniel M. Griffith, Sydney M. Firmin
+#'
+#' \emph{Maintainer:} Rebecca L. Powell <\email{rebecca.l.powell@du.edu}>
+#'
+#' @section
+#' \strong{1. Mapping C3/C4 grass distribution}:
+#'
+#' To predict and map the C3/C4 distribution of grasses, the following functions
+#'   should be applied sequentially. Minimum inputs required are gridded climate
+#'   data for temperature and precipitation. Each function returns a new Raster*
+#'   object:
+#'
+#' \tabular{lll}{
+#'   \code{mask_climate} \tab .... \tab To generate climate masks based on
+#'     two climate variables, usually temperature and precipitation\cr
+#'   \code{calc_C4_ratio} \tab .... \tab To predict the C4 proportion of
+#'     grasses for each grid cell\cr
+#' }
+#'
+#' @section
+#' \strong{2. Modeling d13C isoscape for terrestrial vegetation}:
+#'
+#' To predict and map the d13C isoscape for terrestrial vegetation, the
+#'   following steps should be applied sequentially. First, the C4 proportion of
+#'   grasses is converted to C3 and C4 percent cover layers. The user may
+#'   optionally incorporate other vegetation layers (e.g., \% woody
+#'   cover, \% crop cover, etc.). Second, a simple mixing model weights d13C
+#'   endmembers based on relative cover of each plant functional type:
+#'
+#' \tabular{lll}{
+#'   \code{calc_pft_cover} \tab .... \tab To generate percent cover layers\cr
+#'   \code{calc_del13C} \tab .... \tab To generate stable carbon isoscape\cr
+#' }
+#'
+#' @references Still, C. J. et al. 2003. Global distribution of C3 and C4 vegetation:
+#'   carbon cycle implications. -- Global Biogeochemical Cycles 17:1006.
+#'
+#' Still, C. J. and Powell, R. L. 2010. Continental-scale distributions of vegetation
+#'   stable carbon isotope ratios. In: West, J. B. et al. (eds). Isoscapes:
+#'   understanding movement, pattern, and process on earth through isotope
+#'   mapping -- Springer, pp.179-193.
+#'
+#' Powell, R. L. et al. 2012. Vegetation and soil carbon-13 isoscapes for South
+#'   America: integrating remote sensing and ecosystem isotope measurements. --
+#'   Ecosphere 3:109.
+#'
+#'
+NULL
+
